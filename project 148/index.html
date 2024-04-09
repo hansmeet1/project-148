@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene background="color:cyan">
+            <a-camara position="0 8 15"></a-camara>
+            <a-assets timeout="10000">
+                <a-asset-item id="giraffe" src="./assets/giraffe/scene.gltf"></a-asset-item>
+            </a-assets>
+            <!--ambient light-->
+            <a-entity light="type:ambient;intensity:0.5"></a-entity>
+            <!--directional-->
+            <a-entity light="type:directional;intensity:5;distance:50;decay:2;color:white;castShadow:true" position="-100 20 20"></a-entity>
+
+            <!--PLANE-->
+            <a-circle position="0 0 0"rotation="-90 0 0" radius="100" shadow="receive:true" visible="true" src="./textures/road.png"></a-circle>
+
+            <a-entity>
+            <a-entity gltf-model="#giraffe" position="-7 5 0" rotation="0 90 0" scale="1 1 1"shadow="cast:true"> </a-entity>
+            </a-entity>
+        </a-scene>
+    </body>
+
+</html>
